@@ -1,0 +1,58 @@
+{% extends 'layout.html' %}
+{% block content %}
+<form method="POST" class="carform">
+    <div class = "carlist">
+
+        <div class = "filter"> Sortuj według:
+            <select name="sort">
+                {% if sort == 0 %}
+                    <option selected="selected">id</option>
+                    <option>uzytkownik</option>
+                    <option>auto</option>
+                {% endif %}
+                {% if sort == 1 %}
+                    <option></option>
+                    <option selected="selected">uzytkownik</option>
+                    <option>auto</option>
+                    <option>id</option>
+                {% endif %}
+                {% if sort == 2 %}
+                    <option selected="selected">auto</option>
+                    <option>id</option>
+                    <option>uzytkownik</option>
+                {% endif %}
+            </select>
+            <input type="submit" class = "filter" name = "filter" value="Zastosuj">
+        </div>
+    <div class="reservations">
+        <table class="reservations">
+            <tr class="title">
+                <td colspan = 6 >Rezerwacje aut:</td>
+
+            </tr>
+            <tr class="subtitle">
+                <td>ID</td>
+                <td>Wypożyczający</td>
+                <td>Auto</td>
+                <td>OD</td>
+                <td>DO</td>
+                <td>OPCJE</td>
+            </tr>
+            {% for reservation in reservations %}
+            <tr style = "border-bottom: 1px solid;">
+                <td>{{ reservation[0] }}</td>
+                <td>{{ reservation[1] }}</td>
+                <td>{{ reservation[2] }}</td>
+                <td>{{ reservation[3] }}</td>
+                <td>{{ reservation[4] }}</td>
+                <td><a href="/reservations?delete={{ reservation[0] }}" class = "delete"  > Usuń</td>
+            </tr>
+            {% endfor %}
+
+
+        </table>
+    </div>
+    </div>
+</form>
+
+{% endblock %}

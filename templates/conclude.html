@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<div class ="center">
+    <div class="form">
+    <form method="POST" class="carform">
+        <table class="dane">
+                <tr class="title">
+                    <td colspan="2">
+                        Podsumowanie
+                    </td>
+
+                </tr>
+                    <td>Auto: </td>
+                    <td>{{ auto[0] + " " + auto[1] }} </td>
+                <tr>
+                    <td>Od: </td>
+                    <td>{{ dfrom }}  </td>
+
+                </tr>
+                <tr>
+                    <td>Do: </td>
+                    <td>{{ dto }}  </td>
+
+                </tr>
+                <tr>
+                    <td>Okres: </td>
+                    <td>{{ days }} dni </td>
+                <tr>
+                    <td>Koszt: </td>
+                    <td>{{ koszt }} zł </td>
+
+                </tr>
+                <tr class="options">
+                    <td colspan="2">
+                        <input type="submit" class="button" name="ok" value="Wróc">
+                    </td>
+                </tr>
+        </table>
+    </form>
+</div>
+</div>
+{% endblock %}

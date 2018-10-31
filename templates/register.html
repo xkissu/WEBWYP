@@ -1,0 +1,87 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class ="center">
+<div class="form">
+    <form method="POST" class="carform">
+        <table class="dane">
+            <tr class="title">
+                <td colspan="2">
+                    Rejestracja
+                </td>
+
+            </tr>
+
+            <tr>
+                <td>
+                    Login
+                </td>
+                <td>
+                     <input type="text" name = "login" placeholder="Wpisz login" ></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Hasło
+                </td>
+                <td>
+                     <input type="password" name = "pass1" placeholder="Wpisz hasło"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Powtórz hasło
+                </td>
+                <td>
+                     <input type="password" name = "pass2" placeholder="Powtórz hasło" ></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Imię i nazwisko:
+                </td>
+                <td>
+                     <input type="text" name = "name" placeholder="Imię Nazwisko"" ></textarea>
+                </td>
+            </tr>
+            {% if type == "admin" %}
+                <tr>
+
+                    <td>
+                        Rodzaj uzytkownika:
+                    </td>
+                    <td>
+                        <select name="type">
+                        <option selected="selected">user</option>
+
+                            <option>admin</option>
+
+                    </td>
+                </tr>
+            {% endif %}
+            {% if type == "user" or type == "" %}
+                <tr>
+
+                    <td>
+                        <select name="type" style="visibility: hidden;">
+                        <option selected="selected">user</option>
+
+                    </td>
+                </tr>
+            {% endif %}
+
+            <tr class="options">
+
+                <td colspan="2">
+
+                    <input type="submit" class="button" name="add" value="Zarejestruj">
+
+                </td>
+
+            </tr>
+
+        </table>
+        <div class="error">{{ errorstring }}</div>
+    </form>
+    </div>
+</div>
+{% endblock %}

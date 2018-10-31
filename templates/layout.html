@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Wypozyczalnia</title>
+    <link rel="stylesheet"
+          type="text/css"
+          href='{{ url_for("static", filename="css/style.css") }}'>
+</head>
+<body>
+    <div class="topbar">
+
+        <div class ="logo"><a href ="/"><font color="#fff">Rent</font><font color="#999"><b>Car</b></font></a></div>
+        <nav>
+            {% if user:   %}
+                <a href="/logout" class="button">Wyloguj {{ user }} </a>
+            {% endif %}
+            {% if type == "admin" %}
+                <a href="/add" class="button">+ Nowe auto </a>
+            {% endif %}
+            {% if type == "admin" %}
+                <a href="/register" class="button">+ Nowy pracownik </a>
+            {% endif %}
+            {% if type == "admin" %}
+                <a href="/reservations" class="button">Rezerwacje </a>
+            {% endif %}
+            {% if type == "user" %}
+                <a href="/reservations" class="button">Moje rezerwacje </a>
+            {% endif %}
+        </nav>
+    </div>
+    {% block content %}
+
+    {% endblock %}
+
+</body>
+</html>

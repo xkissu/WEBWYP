@@ -1,0 +1,87 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class ="center">
+<div class="form">
+    <form method="POST" class="carform">
+        <table class="dane">
+            <tr class="title">
+                <td colspan="2">
+                    Dodaj Auto
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    Marka
+                </td>
+                <td>
+                    <select name="manufacturer">
+
+                        <option selected="selected">{{auto[0]}}</option>
+
+                        {% for car in marki %}
+
+                        <option>{{ car }}</option>
+                        {% endfor %}
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Model
+                </td>
+                <td>
+                    <select name="model">
+
+                        <option selected="selected">{{auto[1]}}</option>
+
+                        {% for model in modele %}
+
+                        <option>{{ model }}</option>
+                        {% endfor %}
+                    </select>
+
+                    <input type="submit" name="modelrefresh" value="&#8634">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Rok
+                </td>
+                <td>
+                     <input type="number" name = "date" value="{{auto[2]}}"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Przebieg
+                </td>
+                <td>
+                     <input type="number" name = "odometer"value="{{auto[3]}}"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Cena / tyg
+                </td>
+                <td>
+                     <input type="number" name = "price"value="{{auto[4]}}"></textarea>
+                </td>
+            </tr>
+
+            <tr class="options">
+
+                <td colspan="2">
+
+                    <input type="submit" class="button" name="add" value="Dodaj">
+
+                </td>
+
+            </tr>
+
+        </table>
+        <div class="error">{{ errorstring }}</div>
+    </form>
+    </div>
+</div>
+{% endblock %}

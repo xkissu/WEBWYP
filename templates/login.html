@@ -1,0 +1,53 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class ="center">
+<div class="form">
+    <form method="POST" class="carform">
+        <table class="dane">
+            <tr class="title">
+                <td colspan="2">
+                    Zaloguj się:
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    Login
+                </td>
+                <td>
+                    <input type="text" placeholder="Wpisz login" name = "login" value=""></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Hasło
+                </td>
+                <td>
+                   <input type="password" placeholder="Wpisz hasło" name = "password" value=""></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center">
+                    Nie masz konta? <a href="/register">Zarejestruj</a> się!
+
+                </td>
+
+            </tr>
+
+
+            <tr class="options">
+
+                <td colspan="2">
+
+                    <input type="submit" class="button" name="add" value="Zaloguj się">
+
+                </td>
+
+            </tr>
+
+        </table>
+        <div class="error">{{ errorstring }}</div>
+    </form>
+    </div>
+</div>
+{% endblock %}

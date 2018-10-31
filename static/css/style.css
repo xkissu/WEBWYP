@@ -1,0 +1,264 @@
+body {
+    background-image: url("../image/bg.jpg");
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-attachment: fixed;
+    background-size:cover;
+    margin: 0 auto;
+    font-family: arial;
+}
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style-type: none;
+}
+div.center{
+    width:100%;
+    text-align: center;
+    }
+div.topbar {
+    text-align: left;
+    overflow: hidden;
+    background: rgba(0,0,0, 0.9);
+    display:inline-block;
+    width:100%;
+    position: fixed;
+    top:0 ;
+    transition: top 0.3s; /* Transition effect when sliding down (and up) */
+
+    box-shadow: 0px 0px 5px #222;
+}
+div.filter{
+    width:100%;
+    padding-left: 5rem;
+    margin: 0rem 0px 0rem 0px;
+    background: rgba(255,255,255, 0.7);
+    height: 3rem;
+    line-height: 3rem;
+}
+div.logo {
+    text-align: center;
+    padding: 10px 0px 0px 0px;
+    font-size: 24pt;
+    font-family: arial;
+    display:inline-block;
+    margin: 10px;
+
+    }
+nav {
+    float: right;
+    margin: 10px;
+}
+.button {
+    background-color: #555555;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-family: Verdana;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 12px;
+}
+.button:hover {
+    background-color: #ff9900;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 12px;}
+.delete {
+    background-color: #555555;
+    border: none;
+    color: white;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    font-family: Verdana;
+    display: inline-block;
+    font-size: 10pt;
+    margin: 2% 0px 0px 0px;
+
+}
+.delete2 {
+    background-color: #555555;
+    border: none;
+    color: #AAA;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    font-family: Verdana;
+    display: inline-block;
+    font-size: 10pt;
+    margin: 2% 0px 0px 0px;
+
+}
+.delete:hover {
+    background-color: #ff9900;
+    border: none;
+    color: white;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    font-family: Verdana;
+    display: inline-block;
+    font-size: 10pt;
+}
+.carlist {
+    margin-top: 80px;
+    width: 100% ;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+    }
+ .carlist .car{
+    width: 300px;
+    background: rgba(255, 255, 255, 0.7);
+    box-sizing: border-box;
+    text-align: center;
+    margin: 0.5rem;
+ } .carlist .car2{
+    width: 300px;
+    background: rgba(255, 150, 150, 0.7);
+    box-sizing: border-box;
+    text-align: center;
+    margin: 0.5rem;
+ }
+ img{
+    width:40px;
+    height:30px;
+  }
+input[type=number], select {
+
+    width:9rem;
+
+}
+input.filter {
+    background-color: #555555;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    font-family: Verdana;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 12px;
+
+}
+input.filter:hover {
+    background-color: #ff9900;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    font-family: Verdana;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 12px;
+
+}
+input.submit {
+    background-color: #555555;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-family: Verdana;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 12px;
+}
+input.submit:hover {
+    background-color: #ff9900;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-family: Verdana;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 12px;
+}
+
+ div.form{
+    margin: 80px auto;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.3);
+    align:center;
+    width: 30%;
+    font-weight: bold;
+    color: white;
+ }
+ div.reservations{
+    margin: 2rem auto;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.3);
+    align:center;
+    width: 60%;
+    font-weight: bold;
+    color: white;
+ }
+div.error{
+    color: #F00;
+}
+table.dane {
+    margin: 0px;
+    width: 100%;
+    padding: 0;
+    border-spacing: 0;
+    text-align: left;
+}
+table.reservations {
+    margin: 0px;
+    width: 100%;
+    padding: 0;
+    border-spacing: 0;
+    text-align: center;
+}
+td  {
+    padding: 10px;
+}
+ tr.title {
+    padding: 0px 0px 10px 0px;
+    background-color: #000;
+    font-size: 15pt;
+    text-align: center;
+    color: white;
+    }
+ tr.subtitle {
+    padding: 0px 0px 10px 0px;
+    background-color: #444;
+    font-size: 12pt;
+    color: white;
+    }
+tr.options {
+    padding: 0px 0px 10px 0px;
+    background-color: #DDD;
+    font-size: 15pt;
+    color: white;
+
+    text-align: center;
+
+    }
+tr.options2 {
+    padding: 0px 0px 10px 0px;
+    background-color: #f77;
+    font-size: 15pt;
+    color: white;
+
+    text-align: center;
+
+    }
+ tr {
+     }

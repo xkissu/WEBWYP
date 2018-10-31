@@ -1,0 +1,162 @@
+{% extends 'layout.html' %}
+{% block content %}
+<form method="POST" class="carform">
+    <div class = "carlist">
+
+        <div class = "filter"> Sortuj według:
+            <select name="sort">
+                {% if sort == 0 %}
+                    <option selected="selected"></option>
+                    <option>marka</option>
+                    <option>cena</option>
+                    <option>rok</option>
+                {% endif %}
+                {% if sort == 1 %}
+                    <option></option>
+                    <option selected="selected">marka</option>
+                    <option>cena</option>
+                    <option>rok</option>
+                {% endif %}
+                {% if sort == 3 %}
+                    <option ></option>
+                    <option>marka</option>
+                    <option>cena</option>
+                    <option selected="selected">rok</option>
+                {% endif %}
+                {% if sort == 5 %}
+                    <option"></option>
+                    <option>marka</option>
+                    <option selected="selected">cena</option>
+                    <option >rok</option>
+                {% endif %}
+            </select>
+            <input type="submit" class = "filter" name = "filter" value="Zastosuj">
+        </div>
+        {% for car in cars %}
+
+            <div class="car">
+                <table class = "dane">
+
+                    <tr class = "title">
+                        <td colspan="2">
+                            {{ car[0] }}.
+
+                            {{ car[1] }}
+                        </td>
+                        <td>
+                        <img src = "/static/image/{{car[1]}}.png" alt="XDD">
+                        </td>
+                    </tr>
+                </table>
+                <table class = "dane">
+                    <tr>
+                        <td>
+                            Model
+                        </td>
+                        <td colspan="3">
+                            {{ car[2] }}
+                        </td>
+                    <tr >
+                        <td>
+                            Rok
+                        </td>
+                        <td colspan="3">
+                            {{ car[3] }}
+                        </td>
+                    <tr>
+                        <td>
+                            Przebieg
+                        </td>
+                        <td colspan="3">
+                            {{ car[4] }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Cena / tyg
+                        </td>
+                        <td colspan="3">
+                            {{ car[5] }}
+                        </td>
+                    </tr>
+                </table>
+                <table class="dane">
+                    <tr class = "options">
+                        <td>
+                            {% if type == "admin" %}
+                            <a href="/?delete={{  car[0] }}" class = "delete" >usun</a>
+                            <a href="/edit?id={{  car[0] }}" class = "delete">edytuj</a>
+                            {% endif %}
+                            <a href="/rent?id={{  car[0] }}" class = "delete">wypozycz</a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        {% endfor %}
+        {% for car2 in cars2 %}
+
+                <div class="car2">
+                    <table class = "dane">
+
+                        <tr class = "title">
+                            <td colspan="2">
+                                {{ car2[0] }}.
+
+                                {{ car2[1] }}
+                            </td>
+                            <td>
+                        <img src = "/static/image/{{car2[1]}}.png" alt="?">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                Model
+                            </td>
+                            <td colspan="2">
+                                {{ car2[2] }}
+                            </td>
+                        <tr >
+                            <td>
+                                Rok
+                            </td>
+                            <td colspan="2">
+                                {{ car2[3] }}
+                            </td>
+                        <tr>
+                            <td>
+                                Przebieg
+                            </td>
+                            <td colspan="2">
+                                {{ car2[4] }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Cena
+                            </td>
+                            <td colspan="2">
+                                {{ car2[5] }}
+                            </td>
+                        </tr>
+                    </table>
+
+                    <table class="dane">
+                        <tr class = "options2">
+                            <td>
+
+                                {% if type == "admin" %}
+                                <a href="/?delete={{  car2[0] }}"class = "delete"  >usun</a>
+                                <a href="/edit?id={{  car2[0] }}"class = "delete" >edytuj</a>
+                                <a href="/rent?id={{ car2[0]}}" class = "delete" >wypozycz</a>
+                                {% endif %}
+                            </td>
+                        </tr>
+                    </table>
+
+                </div>
+        {% endfor %}
+    </div>
+</form>
+
+{% endblock %}
